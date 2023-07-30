@@ -12,6 +12,11 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
+$app->get('/test', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world!");
+    return $response;
+});
+
 $app->get('/{slug}', function (Request $request, Response $response, $args) {
     $conn = mysqli_connect(getenv("MYSQLHOST"), getenv("MYSQLUSER"), getenv("MYSQLPASSWORD"), getenv("MYSQLDATABASE"), getenv("MYSQLPORT"));
     if (!$conn) {
