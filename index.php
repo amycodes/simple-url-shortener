@@ -12,8 +12,8 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->get('/test', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
+$app->get('/app/test', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("This has been a test.");
     return $response;
 });
 
